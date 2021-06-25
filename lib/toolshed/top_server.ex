@@ -1,7 +1,5 @@
 defmodule Toolshed.TopServer do
-  @moduledoc """
-  Find the top processes and refresh them after every 1000 milliseconds
-  """
+  @moduledoc false
   use GenServer
   @default_n 10
 
