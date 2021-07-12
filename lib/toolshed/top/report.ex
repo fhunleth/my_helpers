@@ -14,7 +14,7 @@ defmodule Toolshed.Top.Report do
   @doc """
   Return an ANSI escape sequence that erases a report
   """
-  @spec erase_report(options()) :: iodata()
+  @spec erase_report(options()) :: iolist()
   def erase_report(options) do
     lines_to_erase = options.n + 2
 
@@ -28,7 +28,7 @@ defmodule Toolshed.Top.Report do
   @doc """
   Create a top process report
   """
-  @spec generate(list(), options()) :: iodata()
+  @spec generate(list(), options()) :: iolist()
   def generate(info, options) do
     content =
       info |> Enum.sort(sort(options.order)) |> Enum.take(options.n) |> Enum.map(&format/1)
